@@ -1,3 +1,5 @@
+import { DIAGONAL_FACTOR } from "../constants";
+
 export default function makePlayer(k, posVec2, speed) {
   // holds reference to the player
   const player = k.add([
@@ -61,6 +63,76 @@ export default function makePlayer(k, posVec2, speed) {
     }
 
     // TODO: implement animations
+
+    //if player isn't moving play idle animation
+    if (
+      player.direction.eq(k.vec2(0, 0)) &&
+      !player.getCurAnim().name.includes("idle")
+    ) {
+      player.play(`${player.directionName}-idle`);
+      return;
+    }
+
+    // else make player move depending on direction
+    if (
+      player.direction.x > 0 &&
+      player.direction.y > -0.5 &&
+      player.direction.y < 0.5
+    ) {
+      player.directionName = "walk-right";
+    }
+
+    if (
+      player.direction.x < 0 &&
+      player.direction.y > -0.5 &&
+      player.direction.y < 0.5
+    )
+      player.directionName = "walk-left";
+
+    if (player.direction.x < 0 && player.direction.y < -0.8)
+      player.directionName = "walk-up";
+
+    if (player.direction.x < 0 && player.direction.y > 0.8)
+      player.directionName = "walk-down";
+
+    if (
+      player.direction.x < 0 &&
+      player.direction.y > -0.8 &&
+      player.direction.y < -0.5
+    )
+      player.directionName = "walk-left-up";
+
+    if (
+      player.direction.x < 0 &&
+      player.direction.y > 0.5 &&
+      player.direction.y < 0.8
+    )
+      player.directionName = "walk-left-down";
+
+    if (
+      player.direction.x > 0 &&
+      player.direction.y < -0.5 &&
+      player.direction.y > -0.8
+    )
+      player.directionName = "walk-right-up";
+
+    if (
+      player.direction.x > 0 &&
+      player.direction.y > 0.5 &&
+      player.direction.y < 0.8
+    )
+      player.directionName = "walk-right-down";
+
+    // if current animation isn't equal to player direction, play animation with that name
+    if (player.getCurAnim().name !== player.directionName) {
+      player.play(player.directionName);
+    }
+
+    // handle diagonal speed, since in games diagonal movement you move faster
+    if (player.direction.x && player.direction.y) {
+      player.move(player.direction.scale(DIAGONAL_FACTOR * speed));
+      return;
+    }
 
     player.move(player.direction.scale(speed));
   });
