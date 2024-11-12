@@ -1,3 +1,6 @@
+// had to install GLSL extension for syntax highlighting
+// also created a .prettierignore file since prettier kept trying to read the glsl as JS
+
 uniform float u_time;
 uniform vec3 u_color1;
 uniform vec3 u_color2;

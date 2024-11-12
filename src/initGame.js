@@ -1,4 +1,5 @@
 import makeKaplayCtx from "./kaplayCtx";
+import { PALETTE } from "./constants";
 
 export default async function initGame() {
   const k = makeKaplayCtx(); // holds Kaplay Contexy
@@ -30,11 +31,11 @@ export default async function initGame() {
   k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
   k.loadSprite("github-logo", "./logos/github-logo.png");
   k.loadSprite("linkedin-logo", "./logos/linkedin-logo.png");
-  k.loadSprite("youtube-logo", "./logos/youtube-logo.png");
-  k.loadSprite("x-logo", "./logos/x-logo.png");
-  k.loadSprite("substack-logo", "./logos/substack-logo.png");
+  //   k.loadSprite("youtube-logo", "./logos/youtube-logo.png");
+  //   k.loadSprite("x-logo", "./logos/x-logo.png");
+  //   k.loadSprite("substack-logo", "./logos/substack-logo.png");
   k.loadSprite("javascript-logo", "./logos/js-logo.png");
-  k.loadSprite("typescript-logo", "./logos/ts-logo.png");
+  //   k.loadSprite("typescript-logo", "./logos/ts-logo.png");
   k.loadSprite("react-logo", "./logos/react-logo.png");
   k.loadSprite("nextjs-logo", "./logos/nextjs-logo.png");
   k.loadSprite("postgres-logo", "./logos/postgres-logo.png");
@@ -47,4 +48,29 @@ export default async function initGame() {
   k.loadSprite("kirby-ts", "./projects/kirby-ts.png");
   k.loadSprite("platformer-js", "./projects/platformer-js.png");
   k.loadShaderURL("tiledPattern", null, "./shaders/tiledPattern.frag");
+
+  //TODO : Import Shader
+  k.loadShaderURL("tiledPattern", null, "/shaders/tiledPattern.frag"); //depending on type of shader this dictates the # of aprams
+
+  // game object, an obj displayed on the screen
+  const tiledBackground = k.add([
+    k.uvquad(k.width(), k.height()), //uvquad = surface we want to display the shader on, k.width & k.height give us height & width of canvas
+    k.shader("tiledPattern", () => ({
+      u_time: k.time() / 20,
+      u_color1: k.Color.fromHex(PALETTE.color3),
+      u_color2: k.Color.fromHex(PALETTE.color2),
+      u_speed: k.vec2(1, -1), // speed in y & x direction
+      u_aspect: k.width() / k.height(), // aspect ratio
+      u_size: 5, // size of each of our squares
+    })), // displays shader onto screen
+    k.pos(0), // place game obj in top-left corner, we use positional component here so that we can update position of game obj after
+    k.fixed(), // make sure game object isn't affected by camera, ideal for bg and ui elements
+  ]); //this is method to create game obj, then we pass an array of components
+
+  k.onResize(() => {
+    tiledBackground.width = k.width();
+    tiledBackground.height = k.height();
+    tiledBackground.uniform.u_aspect = k.width() / k.height();
+  });
+  //   tiledBackground.onUpdate(() => {});
 }
