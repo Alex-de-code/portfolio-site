@@ -53,6 +53,18 @@ export default async function initGame() {
   //TODO : Import Shader
   k.loadShaderURL("tiledPattern", null, "/shaders/tiledPattern.frag"); //depending on type of shader this dictates the # of aprams
 
+  const setInitCamZoomValue = () => {
+    // camera zoom check depending on screen size
+    if (k.width() < 1000) {
+      k.camScale(k.vec2(0.5));
+      return;
+    }
+
+    k.camScale(k.vec2(0.8));
+  };
+
+  setInitCamZoomValue(); // call camera zoom fx
+
   // game object, an obj displayed on the screen
   const tiledBackground = k.add([
     k.uvquad(k.width(), k.height()), //uvquad = surface we want to display the shader on, k.width & k.height give us height & width of canvas
