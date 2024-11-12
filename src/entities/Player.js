@@ -16,6 +16,54 @@ export default function makePlayer(k, posVec2, speed) {
   ]);
 
   // TODO: player controls, etc...
+  let isMouseDown = false;
+  const game = document.getElementById("game");
+  // event listeners for mouse on desktop + mobile
+  game.addEventListener("focusout", () => {
+    isMouseDown = false;
+  });
+
+  game.addEventListener("mousedown", () => {
+    isMouseDown = true;
+  });
+
+  game.addEventListener("mouseup", () => {
+    isMouseDown = false;
+  });
+
+  game.addEventListener("touchstart", () => {
+    isMouseDown = true;
+  });
+
+  game.addEventListener("touchend", () => {
+    isMouseDown = false;
+  });
+
+  // camera logic to track player
+  player.onUpdate(() => {
+    if (!k.camPos().eq(player.pos)) {
+      // check if camera position
+      k.tween(
+        // tween gradually changes a value to destination value
+        k.camPos(),
+        player.pos,
+        0.2, // handles how many seconds the pauses between pos
+        (newPos) => k.camPos(newPos),
+        k.easings.linear // easing fx
+      );
+    }
+    player.direction = k.vec2(0, 0); // every frame loop we set direction prop of player game obj to a vec2
+    const worldMousePos = k.toWorld(k.mousePos()); // need camera mouse pos in game world instead of screen mouse pos
+
+    if (isMouseDown) {
+      // we subtract player pos from world mouse pos to calculate direction the player needs to have to go towards mouse pos, then we normalize vec2 with unitto keep values between -1 & 1 to scale vec2 according to speed
+      player.direction = worldMousePos.sub(player.pos).unit();
+    }
+
+    // TODO: implement animations
+
+    player.move(player.direction.scale(speed));
+  });
 
   return player;
 }
