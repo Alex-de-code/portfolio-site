@@ -1,5 +1,6 @@
 import makeKaplayCtx from "./kaplayCtx";
 import { PALETTE } from "./constants";
+import makePlayer from "./entities/Player";
 
 export default async function initGame() {
   const k = makeKaplayCtx(); // holds Kaplay Contexy
@@ -72,5 +73,6 @@ export default async function initGame() {
     tiledBackground.height = k.height();
     tiledBackground.uniform.u_aspect = k.width() / k.height();
   });
-  //   tiledBackground.onUpdate(() => {});
+
+  makePlayer(k, k.vec2(k.center()), 700); // 1st param = context, 2nd param = create structure that will define position w/ x & y coordinates, k.center allows us to get current center of canvas, 3rd param = player speed
 }
