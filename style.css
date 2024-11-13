@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "ibm-bold";
+  src: url(/fonts/IBMPlexSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "ibm-regular";
+  src: url(/fonts/IBMPlexSans-Regular.ttf);
+}
+
+:root {
+  font-family: "ibm-bold";
+  font-size: 1em;
+  --color1: #272946;
+  --color2: #0ce6f2;
+  --color3: #e7ffee;
+  --color4: #1e579c;
+}
+
+body,
+html {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color1);
+}

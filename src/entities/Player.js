@@ -1,4 +1,10 @@
 import { DIAGONAL_FACTOR } from "../constants";
+import {
+  isEmailModalVisibleAtom,
+  isProjectModalVisibleAtom,
+  isSocialModalVisibleAtom,
+  store,
+} from "../store";
 
 export default function makePlayer(k, posVec2, speed) {
   // holds reference to the player
@@ -54,6 +60,15 @@ export default function makePlayer(k, posVec2, speed) {
         k.easings.linear // easing fx
       );
     }
+
+    // check if any modals are visible, if so return early to prevent logic for moving the player
+    if (
+      store.get(isSocialModalVisibleAtom) ||
+      store.get(isEmailModalVisibleAtom) ||
+      store.get(isProjectModalVisibleAtom)
+    )
+      return;
+
     player.direction = k.vec2(0, 0); // every frame loop we set direction prop of player game obj to a vec2
     const worldMousePos = k.toWorld(k.mousePos()); // need camera mouse pos in game world instead of screen mouse pos
 
