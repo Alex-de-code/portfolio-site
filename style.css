@@ -33,6 +33,48 @@ html {
   background-color: var(--color1);
 }
 
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background-color: var(--color2);
+  border-color: var(--color1);
+  border-style: solid;
+  margin: 15% auto;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 500px;
+  overflow: auto;
+}
+
+.modal-btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-btn:active {
+  background-color: var(--color4);
+}
+
+.modal-content > h1,
+span,
+p {
+  color: var(--color1);
+}
+
+.modal-content > p {
+  font-family: "ibm-regular";
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
 .camera-controller {
   display: flex;
   position: fixed;

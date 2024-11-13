@@ -1,4 +1,4 @@
-import CameraController from "./components/cameraController";
+import CameraController from "./reactComponents/cameraController";
 
 export default function ReactUI() {
   return (
