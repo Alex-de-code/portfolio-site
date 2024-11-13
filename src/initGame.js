@@ -1,3 +1,4 @@
+import makeSection from "./components/Section";
 import makeKaplayCtx from "./kaplayCtx";
 import { PALETTE } from "./constants";
 import makePlayer from "./entities/Player";
@@ -93,6 +94,38 @@ export default async function initGame() {
     tiledBackground.height = k.height();
     tiledBackground.uniform.u_aspect = k.width() / k.height();
   });
+
+  // create About Section
+  makeSection(
+    k,
+    k.vec2(k.center().x, k.center().y - 400),
+    "About",
+    (parent) => {}
+  );
+
+  // create Skills Section
+  makeSection(
+    k,
+    k.vec2(k.center().x - 400, k.center().y),
+    "Skills",
+    (parent) => {}
+  );
+
+  // create Experience Section
+  makeSection(
+    k,
+    k.vec2(k.center().x + 400, k.center().y),
+    "Experience",
+    (parent) => {}
+  );
+
+  // create Projects Section
+  makeSection(
+    k,
+    k.vec2(k.center().x, k.center().y + 400),
+    "Experience",
+    (parent) => {}
+  );
 
   makePlayer(k, k.vec2(k.center()), 700); // 1st param = context, 2nd param = create structure that will define position w/ x & y coordinates, k.center allows us to get current center of canvas, 3rd param = player speed
 }
