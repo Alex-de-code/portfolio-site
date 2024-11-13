@@ -1,6 +1,7 @@
 import makeKaplayCtx from "./kaplayCtx";
 import { PALETTE } from "./constants";
 import makePlayer from "./entities/Player";
+import { cameraZoomValueAtom, store } from "./store";
 
 export default async function initGame() {
   const k = makeKaplayCtx(); // holds Kaplay Contexy
@@ -56,14 +57,21 @@ export default async function initGame() {
   const setInitCamZoomValue = () => {
     // camera zoom check depending on screen size
     if (k.width() < 1000) {
+      store.set(cameraZoomValueAtom, 0.5);
       k.camScale(k.vec2(0.5));
       return;
     }
-
+    store.set(cameraZoomValueAtom, 0.5);
     k.camScale(k.vec2(0.8));
   };
 
   setInitCamZoomValue(); // call camera zoom fx
+
+  //runs a loop on every frame, kind of like useEffect
+  k.onUpdate(() => {
+    const cameraZoomValue = store.get(cameraZoomValueAtom);
+    if (cameraZoomValue !== k.camScale()) k.camScale(k.vec2(cameraZoomValue));
+  });
 
   // game object, an obj displayed on the screen
   const tiledBackground = k.add([

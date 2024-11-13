@@ -9,7 +9,7 @@ const ui = document.getElementById("ui"); // references ui div
 const root = createRoot(ui);
 root.render(
   <StrictMode>
-    //need to pass in the store we want to use
+    {/*need to pass in the store we want to use*/}
     <Provider store={store}>
       <ReactUI />
     </Provider>
