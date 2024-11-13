@@ -6,7 +6,7 @@ export default function EmailModal() {
   const [isVisible, setIsVisible] = useAtom(isEmailModalVisibleAtom);
   const email = useAtomValue(emailAtom);
 
-  const [onCopyMesasge, setOnCopyMessage] = useState("");
+  const [onCopyMessage, setOnCopyMessage] = useState("");
 
   const buttons = [
     {

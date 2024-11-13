@@ -6,6 +6,7 @@ import {
 } from "../store";
 import makeIcon from "./Icon";
 import { PALETTE } from "../constants";
+import { opacityTrickleDown } from "../utils";
 
 // acts as a constructor
 export default function makeSocialIcon(
@@ -41,5 +42,8 @@ export default function makeSocialIcon(
   });
 
   // TODO: opacity modifier for child game obj
+
+  opacityTrickleDown(parent, [subtitleText, linkSwitch]);
+
   return socialIcon;
 }

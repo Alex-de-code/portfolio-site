@@ -5,6 +5,7 @@ import makePlayer from "./entities/Player";
 import { cameraZoomValueAtom, store } from "./store";
 import makeEmailIcon from "./components/EmailIcon";
 import makeSocialIcon from "./components/SocialIcon";
+import { makeAppear } from "./utils";
 
 export default async function initGame() {
   const generalData = await (await fetch("./configs/generalData.json")).json(); // fetch data from json file in configs & store to variable
@@ -131,8 +132,8 @@ export default async function initGame() {
             socialContainer,
             k.vec2(socialData.pos.x, socialData.pos.y),
             socialData.imageData,
-            socialData.subtitle,
-            socialData.email
+            socialData.name,
+            socialData.address
           );
 
           continue;
@@ -142,11 +143,14 @@ export default async function initGame() {
           socialContainer,
           k.vec2(socialData.pos.x, socialData.pos.y),
           socialData.imageData,
-          socialData.subtitle,
+          socialData.name,
           socialData.link,
           socialData.description
         );
       }
+
+      makeAppear(k, container);
+      makeAppear(k, socialContainer);
     }
   );
 

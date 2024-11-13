@@ -1,3 +1,4 @@
+import { opacityTrickleDown } from "../utils";
 import makeIcon from "./Icon";
 
 export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
@@ -18,7 +19,8 @@ export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
     icon.applyImpulse(player.direction.scale(1000)); // obj gets pushed in direction of player
   });
 
-  // TODO : add opacity modifier for child game obj
+  //add opacity modifier for child game obj
+  opacityTrickleDown(parent, [subtitleText]);
 
   return icon;
 }
