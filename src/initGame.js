@@ -7,11 +7,15 @@ import makeEmailIcon from "./components/EmailIcon";
 import makeSocialIcon from "./components/SocialIcon";
 import makeSkillIcon from "./components/SkillIcon";
 import { makeAppear } from "./utils";
+import makeWorkExperienceCard from "./components/WorkExperienceCard";
 
 export default async function initGame() {
   const generalData = await (await fetch("./configs/generalData.json")).json(); // fetch data from json file in configs & store to variable
   const socialsData = await (await fetch("./configs/socialsData.json")).json(); // fetch socials data
   const skillsData = await (await fetch("./configs/skillsData.json")).json(); // fetch skills data
+  const experiencesData = await (
+    await fetch("./configs/experiencesData.json")
+  ).json(); // fetch experiences data
 
   const k = makeKaplayCtx(); // holds Kaplay Contexy
   // loadSprite() is a f(x) kaplay offers, 1st parameter is used by specifying a key for a specific sprite, 2nd is that sprite's path, 3rd is data properties
@@ -183,8 +187,21 @@ export default async function initGame() {
   makeSection(
     k,
     k.vec2(k.center().x + 400, k.center().y),
-    "Experience",
-    (parent) => {}
+    generalData.section3Name,
+    (parent) => {
+      const container = parent.add([k.opacity(0), k.pos(0)]);
+
+      for (const experienceData of experiencesData) {
+        makeWorkExperienceCard(
+          k,
+          container,
+          k.vec2(experienceData.pos.x, experienceData.pos.y),
+          experienceData.cardHeight,
+          experienceData.roleData
+        );
+      }
+      makeAppear(k, container);
+    }
   );
 
   // create Projects Section
