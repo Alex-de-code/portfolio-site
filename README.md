@@ -48,6 +48,16 @@ To run the project locally, follow these steps:
    npm run dev
    ```
 
+## Ongoing Development
+
+This portfolio website is continuously evolving! I plan to periodically add more features, enhance the game world, and refine the overall experience. Upcoming additions include:
+
+- New animations and visual effects for a more dynamic user experience
+- Expanded sections showcasing additional projects and skills
+- Ongoing improvements to the design and functionality
+
+Check back regularly for new updates and improvements!
+
 ## Learning Resources
 
 - **JSLegend**: This project was inspired by a tutorial from JSLegend. You can find the tutorial [here](https://jslegend.com).
