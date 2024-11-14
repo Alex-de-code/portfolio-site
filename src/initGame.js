@@ -208,7 +208,7 @@ export default async function initGame() {
   makeSection(
     k,
     k.vec2(k.center().x, k.center().y + 400),
-    "Experience",
+    "Projects",
     (parent) => {}
   );
 

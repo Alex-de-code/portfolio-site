@@ -3,25 +3,38 @@
     "pos": { "x": 150, "y": -100 },
     "cardHeight": 250,
     "roleData": {
-      "title": "Front-End Software Engineer",
-      "description": "Enhanced [\\REDACTED\\]'s interactive design platform by building and optimizing prototyping tools, empowering designers to create high-fidelity experiences and bridging the gap between design and development.",
+      "title": "Software Engineer",
+      "description": "Designed, developed, and optimized full-stack web applications and interactive user interfaces. Worked on a variety of freelance and personal projects, focusing on responsive design, performance optimization, and robust backend development.",
       "company": {
-        "name": "[\\REDACTED]",
-        "startDate": "2024",
+        "name": "Freelance",
+        "startDate": "Aug 2024",
         "endDate": "Present"
       }
     }
   },
   {
     "pos": { "x": 150, "y": 180 },
+    "cardHeight": 280,
+    "roleData": {
+      "title": "Fellow",
+      "description": "Participated in a comprehensive year-long training program focused on software engineering mastery, industry readiness, and personal development. Gained hands-on experience in full-stack web development, collaborating on real-world projects and preparing for a successful career in tech through mentorship and a strong support network.",
+      "company": {
+        "name": "Pursuit Fellowship",
+        "startDate": "Jul 2023",
+        "endDate": "Aug 2024"
+      }
+    }
+  },
+  {
+    "pos": { "x": 150, "y": 490 },
     "cardHeight": 250,
     "roleData": {
-      "title": "Product Software Engineer",
-      "description": "Improved [\\REDACTED]'s real-time design collaboration tool by developing new components and refining existing features, enhancing workflow efficiency and creativity for design teams worldwide.",
+      "title": "Tech Interview Logistics Coordinator",
+      "description": "Coordinated and optimized the end-to-end interview process for technical roles, ensuring seamless communication between recruiters and candidates. Managed logistics, identified process improvements, and maintained strong client relationships to support hiring objectives and operational metrics.",
       "company": {
-        "name": "[\\REDACTED]",
-        "startDate": "2021",
-        "endDate": "2023"
+        "name": "Capital One",
+        "startDate": "Dec 2021",
+        "endDate": "Dec 2022"
       }
     }
   }

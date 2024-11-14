@@ -58,6 +58,20 @@ html {
 .modal-btn-container {
   display: flex;
   flex-direction: column;
+  /* gap: 20px; */
+}
+
+.modal-btn {
+  font: inherit;
+  font-size: 1.5rem;
+  margin-top: 1vh;
+  min-height: 5vh;
+  max-height: 10vh;
+  background-color: var(--color1);
+  border-color: var(--color2);
+  border-radius: 5px;
+  color: var(--color2);
+  border: none;
 }
 
 .modal-btn:active {
