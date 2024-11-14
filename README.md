@@ -50,4 +50,6 @@ To run the project locally, follow these steps:
 
 ## Learning Resources
 
-- **JSLegend**: This project was built following a tutorial by JSLegend. You can find the tutorial [here](https://www.youtube.com/watch?v=OejpBl2s9OY).
+- **JSLegend**: This project was inspired by a tutorial from JSLegend. You can find the tutorial [here](https://jslegend.com).
+- **The Book of Shaders**: A great resource for learning about shaders and graphics programming. [Explore it here](https://thebookofshaders.com/).
+- **Kaplay Docs**: The official guide for installing and using Kaplay for animations in React. [Access it here](https://kaplayjs.com/guides/install/).
