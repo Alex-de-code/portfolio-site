@@ -1,5 +1,7 @@
 # Portfolio Website
 
+![Screenshot of project](./public/portfolio.png)
+
 This is a personal portfolio website built using **React** and **Vite**, showcasing my projects, skills, and experience as a developer. The website is optimized for performance and features smooth animations powered by **Kaplay**.
 
 ## Features
