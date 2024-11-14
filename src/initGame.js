@@ -92,8 +92,8 @@ export default async function initGame() {
     k.uvquad(k.width(), k.height()), //uvquad = surface we want to display the shader on, k.width & k.height give us height & width of canvas
     k.shader("tiledPattern", () => ({
       u_time: k.time() / 20,
-      u_color1: k.Color.fromHex(PALETTE.color3),
-      u_color2: k.Color.fromHex(PALETTE.color2),
+      u_color1: k.Color.fromHex(PALETTE.color2),
+      u_color2: k.Color.fromHex(PALETTE.color6),
       u_speed: k.vec2(1, -1), // speed in y & x direction
       u_aspect: k.width() / k.height(), // aspect ratio
       u_size: 5, // size of each of our squares
