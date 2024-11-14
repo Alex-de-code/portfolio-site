@@ -8,11 +8,16 @@ import makeSocialIcon from "./components/SocialIcon";
 import makeSkillIcon from "./components/SkillIcon";
 import { makeAppear } from "./utils";
 import makeWorkExperienceCard from "./components/WorkExperienceCard";
+import makeProjectCard from "./components/ProjectCard";
 
 export default async function initGame() {
   const generalData = await (await fetch("./configs/generalData.json")).json(); // fetch data from json file in configs & store to variable
   const socialsData = await (await fetch("./configs/socialsData.json")).json(); // fetch socials data
   const skillsData = await (await fetch("./configs/skillsData.json")).json(); // fetch skills data
+  const projectsData = await (
+    await fetch("./configs/projectsData.json")
+  ).json(); // fetch project data
+
   const experiencesData = await (
     await fetch("./configs/experiencesData.json")
   ).json(); // fetch experiences data
@@ -60,9 +65,11 @@ export default async function initGame() {
   k.loadSprite("tailwind-logo", "./logos/tailwind-logo.png");
   k.loadSprite("python-logo", "./logos/python-logo.png");
   k.loadSprite("email-logo", "./logos/email-logo.png");
-  k.loadSprite("sonic-js", "./projects/sonic-js.png");
-  k.loadSprite("kirby-ts", "./projects/kirby-ts.png");
-  k.loadSprite("platformer-js", "./projects/platformer-js.png");
+  // k.loadSprite("sonic-js", "./projects/sonic-js.png");
+  // k.loadSprite("kirby-ts", "./projects/kirby-ts.png");
+  k.loadSprite("taleblazers", "./projects/taleblazers.png");
+  k.loadSprite("head2head", "./projects/head2head.png");
+  // k.loadSprite("platformer-js", "./projects/platformer-js.png");
   k.loadShaderURL("tiledPattern", null, "./shaders/tiledPattern.frag");
 
   //TODO : Import Shader
@@ -84,7 +91,7 @@ export default async function initGame() {
   //runs a loop on every frame, kind of like useEffect
   k.onUpdate(() => {
     const cameraZoomValue = store.get(cameraZoomValueAtom);
-    if (cameraZoomValue !== k.camScale()) k.camScale(k.vec2(cameraZoomValue));
+    if (cameraZoomValue !== k.camScale().x) k.camScale(k.vec2(cameraZoomValue));
   });
 
   // game object, an obj displayed on the screen
@@ -208,8 +215,21 @@ export default async function initGame() {
   makeSection(
     k,
     k.vec2(k.center().x, k.center().y + 400),
-    "Projects",
-    (parent) => {}
+    generalData.section4Name,
+    (parent) => {
+      const container = parent.add([k.opacity(0), k.pos(0, 0)]);
+
+      for (const project of projectsData) {
+        makeProjectCard(
+          k,
+          container,
+          k.vec2(project.pos.x, project.pos.y),
+          project.data,
+          project.thumbnail
+        );
+      }
+      makeAppear(k, container);
+    }
   );
 
   makePlayer(k, k.vec2(k.center()), 700); // 1st param = context, 2nd param = create structure that will define position w/ x & y coordinates, k.center allows us to get current center of canvas, 3rd param = player speed

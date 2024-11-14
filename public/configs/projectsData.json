@@ -1,0 +1,42 @@
+[
+  {
+    "pos": { "x": 0, "y": 350 },
+    "thumbnail": "taleblazers",
+    "data": {
+      "title": "Tale Blazers",
+      "description": "Tale Blazers is an innovative platform designed to foster collaborative storytelling, where creativity thrives through community-driven narratives. Writers of all levels can contribute to ongoing stories, each of which evolves through the collective imagination of our users. Whether you're an experienced writer or new to storytelling, Tale Blazers offers an interactive and dynamic space to explore and shape unique stories.\n\nKey Features include:\n- **Collaborative Storytelling**: Contribute to ongoing stories, shape multiple endings, and drive the narrative with your decisions and ideas.\n- **Community-Driven**: Engage with fellow writers, share feedback, and collaborate on immersive, evolving stories.\n- **Originality and Innovation**: Experience stories that take unexpected turns and break conventions, evolving in real-time based on diverse contributions.\n- **Endless Possibilities**: Explore a wide variety of genres from mystery to fantasy, romance, and sci-fi. Every visit offers a new creative adventure.\n\nJoin Tale Blazers today, and become part of a vibrant community where your creativity is boundless, and every story is a collaborative masterpiece.",
+      "links": [
+        {
+          "id": 0,
+          "name": "Deployed Site",
+          "link": "https://taleblazers.netlify.app/"
+        },
+        {
+          "id": 1,
+          "name": "GitHub Repository",
+          "link": "https://github.com/Alex-de-code/tale-blazers-frontend-jwt-auth"
+        }
+      ]
+    }
+  },
+  {
+    "pos": { "x": 0, "y": 840 },
+    "thumbnail": "head2head",
+    "data": {
+      "title": "Head 2 Head",
+      "description": "Head 2 Head (H2H) is a comprehensive platform designed to enhance the pickup basketball experience. The app simplifies team formation, match scheduling, and player interaction, helping users reconnect with the competitive thrill of the game. H2H provides a seamless interface for players to find teammates, create games, and track performance with professional-level statistics, all while fostering a sense of community and excellence.\n\nKey Features include:\n- **Find Teammates**: Quickly discover and connect with players who share your passion for basketball.\n- **Create Matches**: Effortlessly organize games and manage scheduling with minimal hassle.\n- **Personalized Player Profiles**: Showcase your skills and achievements, complete with advanced statistics to elevate your competitive profile.\n- **Professional-Level Stats**: Track your performance with detailed metrics that mirror professional athlete data, helping you analyze and improve your game.\n- **Opportunities for Excellence**: Whether competing individually or as part of a team, H2H offers a variety of ways to gain recognition and shine.\n\nH2H brings the best of digital convenience and real-world sports together, providing a user-friendly platform where every player and every game is important.",
+      "links": [
+        {
+          "id": 0,
+          "name": "Deployed Site",
+          "link": "https://head2head.netlify.app/"
+        },
+        {
+          "id": 1,
+          "name": "GitHub Repository",
+          "link": "https://github.com/Jadeng62/H2H-frontend"
+        }
+      ]
+    }
+  }
+]
