@@ -47,3 +47,7 @@ To run the project locally, follow these steps:
    ```bash
    npm run dev
    ```
+
+## Learning Resources
+
+- **JSLegend**: This project was built following a tutorial by JSLegend. You can find the tutorial [here](https://www.youtube.com/watch?v=OejpBl2s9OY).
