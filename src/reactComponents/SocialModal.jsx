@@ -29,7 +29,7 @@ export default function socialModal() {
       <div className="modal">
         <div className="modal-content">
           <h1>Do you want to open this link?</h1>
-          <span>{selectedLink}</span>
+          {/* <span>{selectedLink}</span> */}
           <p>{selectedLinkDescription}</p>
           <div className="modal-btn-container">
             {buttons.map((button) => (
