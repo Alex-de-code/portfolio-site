@@ -4,6 +4,8 @@
 
 This is a personal portfolio website built using **React** and **Vite**, showcasing my projects, skills, and experience as a developer. The website is optimized for performance and features smooth animations powered by **Kaplay**.
 
+**Check out the live site here:** [Live Site](https://alex-de-code-portfolio.netlify.app/)
+
 ## Features
 
 - **Responsive Design**: The site is fully responsive, adapting to various screen sizes.
