@@ -16,7 +16,7 @@ export default function musicPlayerController() {
         <div className="bg-color8 m-1 p-2 rounded-lg border-2 border-color5">
           <span className="grid grid-cols-2">
             <div className="col-span-1 mr-1 lg:text-nowrap flex justify-center items-center border-2 border-color5 bg-color9 rounded">
-              <p className="">De-code Radio</p>
+              <p className="">Decode Radio</p>
             </div>
             <div className="col-span-1 border-2 bg-black text-color3 border-color5 rounded-md">
               <div className=" flex justify-center">
