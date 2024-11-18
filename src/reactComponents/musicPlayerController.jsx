@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+// import { PALLETE } from "./constants";
+import { SkipBack, SkipForward, Play, Pause } from "lucide-react";
 
 export default function musicPlayerController() {
   const [dateState, setDateState] = useState(new Date());
@@ -8,14 +10,13 @@ export default function musicPlayerController() {
 
   return (
     <>
-      <div className="bg-red-400 absolute bottom-5 left-5 rounded-xl md:w-1/5 lg:h-1/6 p-1 lg:p-3">
-        <div className="bg-yellow-300 m-1 p-2 rounded-lg">
+      <div className="bg-color7 absolute bottom-5 left-5 rounded-xl sm:w-1/2 lg:w-1/3 xl:w-1/4 p-1 lg:p-2">
+        <div className="bg-color8 m-1 p-2 rounded-lg border-2 border-color5">
           <span className="grid grid-cols-2">
-            <div className="col-span-1 mr-1 lg:text-nowrap flex justify-center items-center bg-yellow-800 rounded">
-              De-code Radio
+            <div className="col-span-1 mr-1 lg:text-nowrap flex justify-center items-center border-2 border-color5 bg-color9 rounded">
+              <p className="">De-code Radio</p>
             </div>
-            <div className="col-span-1 border-2 bg-black text-white border-green-500 rounded-md">
-              {/*TODO: write a function that calculates time and puts it in the proper time zone for clock*/}
+            <div className="col-span-1 border-2 bg-black text-color3 border-color5 rounded-md">
               <div className=" flex justify-center">
                 {" "}
                 {dateState.toLocaleString("en-US", {
@@ -26,19 +27,28 @@ export default function musicPlayerController() {
               </div>
             </div>
           </span>
-          <div className=" bg-blue-400 rounded mt-1 px-1">
+          <div className=" bg-color1 rounded mt-1 px-1">
             <div className="overflow-hidden">
               <div className=" animate-marquee whitespace-nowrap">
-                <span className=" text-white">
+                <span className=" text-color3">
                   Your scrolling radio text goes here. This is a ticker!
                 </span>
               </div>
             </div>
           </div>
-          <span className="flex flex-row justify-around mt-1">
-            <button className="bg-orange-500 hover:bg-blue-500">Rewind</button>
-            <button className="bg-orange-500">PLay/Pause</button>
-            <button className="bg-orange-500">Fastforward</button>
+          <span className="flex flex-row justify-evenly mt-1">
+            <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
+              <SkipBack />
+            </button>
+            <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
+              <Play />
+            </button>
+            <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
+              <Pause />
+            </button>
+            <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
+              <SkipForward />
+            </button>
           </span>
         </div>
       </div>

@@ -127,3 +127,8 @@ p {
   max-width: 40vw;
   user-select: none;
 }
+
+.radio-controller-btn:active {
+  /* opacity: 0.7; */
+  background-color: chocolate;
+}
