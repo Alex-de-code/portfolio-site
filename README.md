@@ -65,3 +65,5 @@ Check back regularly for new updates and improvements!
 - **JSLegend**: This project was inspired by a tutorial from JSLegend. You can find the tutorial [here](https://jslegend.com).
 - **The Book of Shaders**: A great resource for learning about shaders and graphics programming. [Explore it here](https://thebookofshaders.com/).
 - **Kaplay Docs**: The official guide for installing and using Kaplay for animations in React. [Access it here](https://kaplayjs.com/guides/install/).
+- **Dev Community Post - Ahmed Sarhan**: A quick guide on adding a real time clock and date feature with Vanilla JS.
+  [here](https://dev.to/ahmedsarhan/create-your-live-watch-and-date-in-react-js-no-3rd-party-hassle-1oa4)
