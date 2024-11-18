@@ -16,7 +16,7 @@ export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
   icon.use(k.body());
   icon.onCollide("player", (player) => {
     // allows us to add some force to obj, so it can be pushed around or slide
-    icon.applyImpulse(player.direction.scale(1000)); // obj gets pushed in direction of player
+    icon.applyImpulse(player.direction.scale(500)); // obj gets pushed in direction of player
   });
 
   //add opacity modifier for child game obj

@@ -33,7 +33,7 @@ export default function musicPlayerController() {
             <div className="overflow-hidden">
               <div className=" animate-marquee whitespace-nowrap">
                 <span className=" text-color3">
-                  Nothing but the absolute hits!!! Sponsored by Me.
+                  Your favorite songs. Back to back. All day long.
                 </span>
               </div>
             </div>
