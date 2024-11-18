@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { SkipBack, SkipForward, Play, Pause } from "lucide-react";
 
 export default function musicPlayerController() {
+  // state for date/time
   const [dateState, setDateState] = useState(new Date());
+  //for updating the clock
   useEffect(() => {
     setInterval(() => setDateState(new Date()), 30000);
   }, []);
@@ -31,7 +33,7 @@ export default function musicPlayerController() {
             <div className="overflow-hidden">
               <div className=" animate-marquee whitespace-nowrap">
                 <span className=" text-color3">
-                  Your scrolling radio text goes here. This is a ticker!
+                  Nothing but the absolute hits!!! Sponsored by Me.
                 </span>
               </div>
             </div>
