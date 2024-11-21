@@ -1,14 +1,22 @@
 [
   {
-    "title": "demo",
-    "src": "demo.mp3"
+    "title": "Vanity's Theme",
+    "src": "public/sounds/DB_107_Vanity_Theme.wav"
   },
   {
-    "title": "demo2",
-    "src": "demo2.mp3"
+    "title": "Funk U To The Future",
+    "src": "public/sounds/DB_118_Funk_U_To_The_Future.wav"
   },
   {
-    "title": "demo3",
-    "src": "demo3.mp3"
+    "title": "God Help Us",
+    "src": "public/sounds/DB_102_God_Help_Us.wav"
+  },
+  {
+    "title": "Dying Ember",
+    "src": "public/sounds/DB_112_Dying_Ember.wav"
+  },
+  {
+    "title": "Joyful Regrets",
+    "src": "public/sounds/DB_120_Joyful_Regrets.wav"
   }
 ]
