@@ -7,16 +7,13 @@ import { SkipBack, SkipForward, Play, Pause } from "lucide-react";
 export default function musicPlayerController() {
   const [songs, setSongs] = useState([]); //state to store songs
   const [isPlaying, setIsPlaying] = useState(false); // player state
-  // const [currentSong, setCurrentSong] = useState(songs[1]);
+  const [currentSong, setCurrentSong] = useState(songs[1]);
+  const [dateState, setDateState] = useState(new Date()); // state for date/time
 
-  // async function fetchSongsData() {
-  //   const response = await fetch("./configs/songsData.json");
-  //   const songsData = await response.json();
-  //   return songsData;
-  // }
+  const PlayPause = () => {
+    setIsPlaying(!isPlaying); // set isPlaying to opposite to flip play/pause
+  };
 
-  // state for date/time
-  const [dateState, setDateState] = useState(new Date());
   //for updating the clock
   useEffect(() => {
     setInterval(() => setDateState(new Date()), 30000);
@@ -73,12 +70,34 @@ export default function musicPlayerController() {
             <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
               <SkipBack />
             </button>
-            <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
+
+            {isPlaying ? (
+              <button
+                onClick={PlayPause}
+                className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn"
+              >
+                <Pause />
+              </button>
+            ) : (
+              <button
+                onClick={PlayPause}
+                className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn"
+              >
+                <Play />
+              </button>
+            )}
+            {/* <button
+              onClick={PlayPause}
+              className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn"
+            >
               <Play />
             </button>
-            <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
+
+
+
+            <butto onClick={PlayPause} className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
               <Pause />
-            </button>
+            </button> */}
             <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
               <SkipForward />
             </button>
