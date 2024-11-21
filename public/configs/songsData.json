@@ -2,5 +2,13 @@
   {
     "title": "demo",
     "src": "demo.mp3"
+  },
+  {
+    "title": "demo2",
+    "src": "demo2.mp3"
+  },
+  {
+    "title": "demo3",
+    "src": "demo3.mp3"
   }
 ]

@@ -1,14 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // import { PALLETE } from "./constants";
 import { SkipBack, SkipForward, Play, Pause } from "lucide-react";
 
+// import { songsData } from "../../public/configs/songsData.json";
+
 export default function musicPlayerController() {
+  const [songs, setSongs] = useState([]); //state to store songs
+  const [isPlaying, setIsPlaying] = useState(false); // player state
+  // const [currentSong, setCurrentSong] = useState(songs[1]);
+
+  // async function fetchSongsData() {
+  //   const response = await fetch("./configs/songsData.json");
+  //   const songsData = await response.json();
+  //   return songsData;
+  // }
+
   // state for date/time
   const [dateState, setDateState] = useState(new Date());
   //for updating the clock
   useEffect(() => {
     setInterval(() => setDateState(new Date()), 30000);
   }, []);
+
+  useEffect(() => {
+    const fetchSongsData = async () => {
+      try {
+        const response = await fetch("./configs/songsData.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch songs data");
+        }
+        const data = await response.json();
+        setSongs(data); // Update state w/ fetched data
+      } catch (error) {
+        console.error("Error fetching songs data:", error);
+      }
+    };
+    fetchSongsData(); // call f(x)
+  }, []);
+
+  console.log(songs);
 
   return (
     <>
@@ -38,6 +68,7 @@ export default function musicPlayerController() {
               </div>
             </div>
           </div>
+          {/* <audio src="demo.mp3"></audio> */}
           <span className="flex flex-row justify-evenly mt-1">
             <button className="bg-orange-400 p-1 rounded-sm border-2 border-color1 radio-controller-btn">
               <SkipBack />
