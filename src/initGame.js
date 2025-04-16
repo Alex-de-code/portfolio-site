@@ -67,6 +67,7 @@ export default async function initGame() {
   k.loadSprite("email-logo", "./logos/email-logo.png");
   // k.loadSprite("sonic-js", "./projects/sonic-js.png");
   // k.loadSprite("kirby-ts", "./projects/kirby-ts.png");
+  k.loadSprite("admindashboard", "./projects/admindashboard.png");
   k.loadSprite("taleblazers", "./projects/taleblazers.png");
   k.loadSprite("head2head", "./projects/head2head.png");
   // k.loadSprite("platformer-js", "./projects/platformer-js.png");

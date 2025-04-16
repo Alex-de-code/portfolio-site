@@ -1,6 +1,6 @@
 [
   {
-    "pos": { "x": 150, "y": -100 },
+    "pos": { "x": 175, "y": -100 },
     "cardHeight": 250,
     "roleData": {
       "title": "Software Engineer",
@@ -13,7 +13,7 @@
     }
   },
   {
-    "pos": { "x": 150, "y": 180 },
+    "pos": { "x": 175, "y": 180 },
     "cardHeight": 280,
     "roleData": {
       "title": "Fellow",
@@ -26,7 +26,7 @@
     }
   },
   {
-    "pos": { "x": 150, "y": 490 },
+    "pos": { "x": 175, "y": 490 },
     "cardHeight": 250,
     "roleData": {
       "title": "Tech Interview Logistics Coordinator",
