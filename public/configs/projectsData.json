@@ -1,6 +1,26 @@
 [
   {
     "pos": { "x": 0, "y": 350 },
+    "thumbnail": "admindashboard",
+    "data": {
+      "title": "Admin Dashboard",
+      "description": "A beautiful admin dashboard designed with best practices in mind.",
+      "links": [
+        {
+          "id": 0,
+          "name": "Deployed Site",
+          "link": "https://dashboard-admin-1.netlify.app/"
+        },
+        {
+          "id": 1,
+          "name": "GitHub Repository",
+          "link": "https://github.com/Alex-de-code/admin-dashboard-1"
+        }
+      ]
+    }
+  },
+  {
+    "pos": { "x": 0, "y": 840 },
     "thumbnail": "taleblazers",
     "data": {
       "title": "Tale Blazers",
@@ -20,7 +40,7 @@
     }
   },
   {
-    "pos": { "x": 0, "y": 840 },
+    "pos": { "x": 0, "y": 1190 },
     "thumbnail": "head2head",
     "data": {
       "title": "Head 2 Head",
